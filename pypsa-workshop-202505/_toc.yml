@@ -6,12 +6,12 @@ root: intro
 chapters:
 # - file: slides
 #   title: Slide deck PyPSA(-Eur)
-# - file: 01-workshop-pypsa-intro
-# - file: 02-workshop-pypsa-more-features
-# - file: 03-workshop-pypsa-sc-expansion
-# - file: config-small-system
-#   title: config-small-system.yaml
-# - file: config-big-system
-#   title: config-big-system.yaml
+- file: 01-workshop-pypsa-intro
+- file: 02-workshop-pypsa-more-features
+- file: 03-workshop-pypsa-sc-expansion
+- file: config-small-system
+  title: config-small-system.yaml
+- file: config-big-system
+  title: config-big-system.yaml
 - file: annex-python
 - file: annex-pandas
