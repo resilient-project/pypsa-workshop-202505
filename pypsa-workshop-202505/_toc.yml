@@ -9,7 +9,8 @@ chapters:
 - file: 01-pypsa-intro
 - file: 02-pypsa-more-features
 - file: 03-pypsa-sectors-expansion
-- file: 04-pypsa-stochastic-problem-(dev_branch)
+- file: pypsa-stochastic
+  title: (Coming soon) Stochastic optimization with PyPSA
 - file: config-small-system
   title: config-small-system.yaml
 - file: config-big-system
