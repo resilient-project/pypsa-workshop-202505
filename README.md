@@ -1,8 +1,8 @@
 # Material for the PyPSA(-Eur) modelling workshop
 *22-23 May 2025, TU Berlin, Germany*
 
-This repository contains PyPSA(-Eur) materials for the workshop organized for a broad audience of researchers and industry stakeholders interested in energy system modelling.
-The workshop is held by the TU Berlin team (ENSYS department) with a support of a publicly funded RESILIENT project.
+This repository contains PyPSA(-Eur) materials for a workshop organized for a broad audience of researchers and industry stakeholders interested in energy system modelling.
+The workshop is hosted by the ENSYS research group at TU Berlin — Fabian Neumann and Iegor Riepin — with support from the publicly funded RESILIENT project.
 
 We gratefully acknowledge funding by the German Federal Ministry for Economic Affairs and Climate Action (BMWK) under Grant No. 03EI4083A (RESILIENT project) jointly with the CETPartnership (https://cetpartnership.eu/) through the Joint Call 2022, which supports our modelling workshops and public training events. As such, we further acknowledge funding from the European Union’s Horizon Europe research and innovation programme under grant agreement no. 101069750. https://resilient-project.github.io/
 
