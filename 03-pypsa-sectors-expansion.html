@@ -63,7 +63,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Annex Config" href="config-small-system.html" />
+    <link rel="next" title="New features: Stochastic Optimization in PyPSA" href="pypsa-stochastic.html" />
     <link rel="prev" title="More pypsa features: more complex dispatch problems" href="02-pypsa-more-features.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -187,6 +187,7 @@
 <li class="toctree-l1"><a class="reference internal" href="01-pypsa-intro.html">Introduction to <code class="docutils literal notranslate"><span class="pre">pypsa</span></code> and <code class="docutils literal notranslate"><span class="pre">linopy</span></code>: a simple dispatch problem</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02-pypsa-more-features.html">More <code class="docutils literal notranslate"><span class="pre">pypsa</span></code> features: more complex dispatch problems</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Advanced models in <code class="docutils literal notranslate"><span class="pre">pypsa</span></code>: capacity expansion planning with sector coupling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pypsa-stochastic.html">(Coming soon) Stochastic optimization with PyPSA</a></li>
 <li class="toctree-l1"><a class="reference internal" href="config-small-system.html">config-small-system.yaml</a></li>
 <li class="toctree-l1"><a class="reference internal" href="config-big-system.html">config-big-system.yaml</a></li>
 <li class="toctree-l1"><a class="reference internal" href="annex-python.html">Annex: Intro to the basics of <code class="docutils literal notranslate"><span class="pre">Python</span></code></a></li>
@@ -1088,8 +1089,8 @@ and/or output (i.e. <code class="docutils literal notranslate"><span class="pre"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following buses have carriers which are not defined:
-Index([&#39;electricity&#39;, &#39;hydrogen&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following loads have carriers which are not defined:
+Index([&#39;hydrogen demand&#39;], dtype=&#39;object&#39;, name=&#39;Load&#39;)
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following links have carriers which are not defined:
@@ -1100,8 +1101,8 @@ Index([&#39;electrolysis&#39;, &#39;fuel cell&#39;], dtype=&#39;object&#39;, nam
 Index([&#39;hydrogen storage&#39;], dtype=&#39;object&#39;, name=&#39;Store&#39;)
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following loads have carriers which are not defined:
-Index([&#39;hydrogen demand&#39;], dtype=&#39;object&#39;, name=&#39;Load&#39;)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following buses have carriers which are not defined:
+Index([&#39;electricity&#39;, &#39;hydrogen&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.model: Solve problem using Highs solver
@@ -1113,10 +1114,10 @@ Index([&#39;hydrogen demand&#39;], dtype=&#39;object&#39;, name=&#39;Load&#39;)
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:   0%|          | 0/14 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  64%|██████▍   | 9/14 [00:00&lt;00:00, 85.49it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  64%|██████▍   | 9/14 [00:00&lt;00:00, 84.77it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 14/14 [00:00&lt;00:00, 66.41it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 14/14 [00:00&lt;00:00, 65.42it/s]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -1125,14 +1126,14 @@ Index([&#39;hydrogen demand&#39;], dtype=&#39;object&#39;, name=&#39;Load&#39;)
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.:   0%|          | 0/7 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 7/7 [00:00&lt;00:00, 175.06it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 7/7 [00:00&lt;00:00, 173.38it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 0.27s
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 0.28s
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running HiGHS 1.10.0 (git hash: fd86653): Copyright (c) 2025 HiGHS under MIT licence terms
-LP   linopy-problem-4bbs6fsn has 37237 rows; 17527 cols; 71227 nonzeros
+LP   linopy-problem-i62cns26 has 37237 rows; 17527 cols; 71227 nonzeros
 Coefficient ranges:
   Matrix [1e-04, 4e+00]
   Cost   [4e-02, 2e+05]
@@ -1164,13 +1165,13 @@ Solver message: Optimal
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      18025     4.7521933007e+10 Pr: 0(0); Du: 0(3.95961e-13) 4s
 Solving the original LP from the solution after postsolve
-Model name          : linopy-problem-4bbs6fsn
+Model name          : linopy-problem-i62cns26
 Model status        : Optimal
 Simplex   iterations: 18025
 Objective value     :  4.7521933007e+10
 Relative P-D gap    :  1.1639490831e-13
-HiGHS run time      :          4.46
-Writing the solution to /tmp/linopy-solve-1gg_rlxx.sol
+HiGHS run time      :          4.43
+Writing the solution to /tmp/linopy-solve-0to96ap_.sol
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)
@@ -1359,10 +1360,10 @@ Writing the solution to /tmp/linopy-solve-1gg_rlxx.sol
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>component  carrier         
+Link       electrolysis         46.7
 Generator  OCGT                 69.5
            offwind              97.7
            solar               147.6
-Link       electrolysis         46.7
 Store      hydrogen storage    938.8
 dtype: float64
 </pre></div>
@@ -1448,105 +1449,55 @@ dtype: float64
   </thead>
   <tbody>
     <tr>
-      <th rowspan="4" valign="top">Generator</th>
-      <th>OCGT</th>
+      <th rowspan="2" valign="top">Load</th>
+      <th>-</th>
       <th>AC</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>-41151.00000</td>
+      <td>-38941.00000</td>
+      <td>-42963.00000</td>
+      <td>-47164.00000</td>
+      <td>-53410.00000</td>
+      <td>-48730.00000</td>
+      <td>-40577.00000</td>
+      <td>-42382.00000</td>
+      <td>-56505.00000</td>
+      <td>-58564.00000</td>
       <td>...</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>6588.61467</td>
+      <td>-53406.00000</td>
+      <td>-54232.00000</td>
+      <td>-58823.00000</td>
+      <td>-52059.00000</td>
+      <td>-40784.00000</td>
+      <td>-40506.00000</td>
+      <td>-50223.00000</td>
+      <td>-50741.00000</td>
+      <td>-54645.00000</td>
+      <td>-45911.00000</td>
     </tr>
     <tr>
-      <th>offwind</th>
-      <th>AC</th>
-      <td>68713.98680</td>
-      <td>71079.39004</td>
-      <td>76513.95286</td>
-      <td>63267.54439</td>
-      <td>88184.57879</td>
-      <td>95075.52625</td>
-      <td>87291.11681</td>
-      <td>89096.11681</td>
-      <td>96219.13030</td>
-      <td>88983.96447</td>
+      <th>hydrogen</th>
+      <th>hydrogen</th>
+      <td>-19500.00000</td>
+      <td>-19500.00000</td>
+      <td>-19500.00000</td>
+      <td>-19500.00000</td>
+      <td>-19500.00000</td>
+      <td>-19500.00000</td>
+      <td>-19500.00000</td>
+      <td>-19500.00000</td>
+      <td>-19500.00000</td>
+      <td>-19500.00000</td>
       <td>...</td>
-      <td>73268.85420</td>
-      <td>71457.24329</td>
-      <td>83991.36394</td>
-      <td>86004.88902</td>
-      <td>83189.86367</td>
-      <td>80462.80787</td>
-      <td>74256.06795</td>
-      <td>75183.49011</td>
-      <td>57698.24524</td>
-      <td>39322.38533</td>
-    </tr>
-    <tr>
-      <th>onwind</th>
-      <th>AC</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>...</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>solar</th>
-      <th>AC</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>6523.56461</td>
-      <td>30610.57241</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>2907.56160</td>
-      <td>16294.15234</td>
-      <td>...</td>
-      <td>6981.09969</td>
-      <td>29488.87352</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>6139.82552</td>
-      <td>22271.62670</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>-19500.00000</td>
+      <td>-19500.00000</td>
+      <td>-19500.00000</td>
+      <td>-19500.00000</td>
+      <td>-19500.00000</td>
+      <td>-19500.00000</td>
+      <td>-19500.00000</td>
+      <td>-19500.00000</td>
+      <td>-19500.00000</td>
+      <td>-19500.00000</td>
     </tr>
     <tr>
       <th rowspan="4" valign="top">Link</th>
@@ -1650,6 +1601,107 @@ dtype: float64
       <td>NaN</td>
     </tr>
     <tr>
+      <th rowspan="4" valign="top">Generator</th>
+      <th>OCGT</th>
+      <th>AC</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>6588.61467</td>
+    </tr>
+    <tr>
+      <th>offwind</th>
+      <th>AC</th>
+      <td>68713.98680</td>
+      <td>71079.39004</td>
+      <td>76513.95286</td>
+      <td>63267.54439</td>
+      <td>88184.57879</td>
+      <td>95075.52625</td>
+      <td>87291.11681</td>
+      <td>89096.11681</td>
+      <td>96219.13030</td>
+      <td>88983.96447</td>
+      <td>...</td>
+      <td>73268.85420</td>
+      <td>71457.24329</td>
+      <td>83991.36394</td>
+      <td>86004.88902</td>
+      <td>83189.86367</td>
+      <td>80462.80787</td>
+      <td>74256.06795</td>
+      <td>75183.49011</td>
+      <td>57698.24524</td>
+      <td>39322.38533</td>
+    </tr>
+    <tr>
+      <th>onwind</th>
+      <th>AC</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>solar</th>
+      <th>AC</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>6523.56461</td>
+      <td>30610.57241</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2907.56160</td>
+      <td>16294.15234</td>
+      <td>...</td>
+      <td>6981.09969</td>
+      <td>29488.87352</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>6139.82552</td>
+      <td>22271.62670</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
       <th>Store</th>
       <th>hydrogen storage</th>
       <th>hydrogen</th>
@@ -1674,57 +1726,6 @@ dtype: float64
       <td>-13199.88177</td>
       <td>17362.72833</td>
       <td>19500.00000</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">Load</th>
-      <th>-</th>
-      <th>AC</th>
-      <td>-41151.00000</td>
-      <td>-38941.00000</td>
-      <td>-42963.00000</td>
-      <td>-47164.00000</td>
-      <td>-53410.00000</td>
-      <td>-48730.00000</td>
-      <td>-40577.00000</td>
-      <td>-42382.00000</td>
-      <td>-56505.00000</td>
-      <td>-58564.00000</td>
-      <td>...</td>
-      <td>-53406.00000</td>
-      <td>-54232.00000</td>
-      <td>-58823.00000</td>
-      <td>-52059.00000</td>
-      <td>-40784.00000</td>
-      <td>-40506.00000</td>
-      <td>-50223.00000</td>
-      <td>-50741.00000</td>
-      <td>-54645.00000</td>
-      <td>-45911.00000</td>
-    </tr>
-    <tr>
-      <th>hydrogen</th>
-      <th>hydrogen</th>
-      <td>-19500.00000</td>
-      <td>-19500.00000</td>
-      <td>-19500.00000</td>
-      <td>-19500.00000</td>
-      <td>-19500.00000</td>
-      <td>-19500.00000</td>
-      <td>-19500.00000</td>
-      <td>-19500.00000</td>
-      <td>-19500.00000</td>
-      <td>-19500.00000</td>
-      <td>...</td>
-      <td>-19500.00000</td>
-      <td>-19500.00000</td>
-      <td>-19500.00000</td>
-      <td>-19500.00000</td>
-      <td>-19500.00000</td>
-      <td>-19500.00000</td>
-      <td>-19500.00000</td>
-      <td>-19500.00000</td>
-      <td>-19500.00000</td>
-      <td>-19500.00000</td>
     </tr>
   </tbody>
 </table>
@@ -1813,8 +1814,8 @@ dtype: float64
 <span class="expanded">Hide code cell output</span>
 </summary>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following buses have carriers which are not defined:
-Index([&#39;electricity&#39;, &#39;hydrogen&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following loads have carriers which are not defined:
+Index([&#39;hydrogen demand&#39;], dtype=&#39;object&#39;, name=&#39;Load&#39;)
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following links have carriers which are not defined:
@@ -1825,8 +1826,8 @@ Index([&#39;electrolysis&#39;, &#39;fuel cell&#39;], dtype=&#39;object&#39;, nam
 Index([&#39;hydrogen storage&#39;], dtype=&#39;object&#39;, name=&#39;Store&#39;)
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following loads have carriers which are not defined:
-Index([&#39;hydrogen demand&#39;], dtype=&#39;object&#39;, name=&#39;Load&#39;)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following buses have carriers which are not defined:
+Index([&#39;electricity&#39;, &#39;hydrogen&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.model: Solve problem using Highs solver
@@ -1838,10 +1839,10 @@ Index([&#39;hydrogen demand&#39;], dtype=&#39;object&#39;, name=&#39;Load&#39;)
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:   0%|          | 0/15 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  60%|██████    | 9/15 [00:00&lt;00:00, 85.58it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  60%|██████    | 9/15 [00:00&lt;00:00, 85.99it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 15/15 [00:00&lt;00:00, 68.29it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 15/15 [00:00&lt;00:00, 68.48it/s]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -1850,14 +1851,14 @@ Index([&#39;hydrogen demand&#39;], dtype=&#39;object&#39;, name=&#39;Load&#39;)
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.:   0%|          | 0/7 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 7/7 [00:00&lt;00:00, 170.98it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 7/7 [00:00&lt;00:00, 174.00it/s]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 0.28s
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running HiGHS 1.10.0 (git hash: fd86653): Copyright (c) 2025 HiGHS under MIT licence terms
-LP   linopy-problem-ppwhi_dz has 37238 rows; 17527 cols; 73417 nonzeros
+LP   linopy-problem-zkociuaq has 37238 rows; 17527 cols; 73417 nonzeros
 Coefficient ranges:
   Matrix [1e-04, 4e+00]
   Cost   [4e-02, 2e+05]
@@ -1889,13 +1890,13 @@ Solver message: Optimal
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      11188     7.5338336224e+10 Pr: 0(0); Du: 0(1.20154e-13) 4s
 Solving the original LP from the solution after postsolve
-Model name          : linopy-problem-ppwhi_dz
+Model name          : linopy-problem-zkociuaq
 Model status        : Optimal
 Simplex   iterations: 11188
 Objective value     :  7.5338336224e+10
 Relative P-D gap    :  1.4380116123e-14
-HiGHS run time      :          3.87
-Writing the solution to /tmp/linopy-solve-tc5219rl.sol
+HiGHS run time      :          3.85
+Writing the solution to /tmp/linopy-solve-6_nw4pg1.sol
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)
@@ -1926,11 +1927,11 @@ Writing the solution to /tmp/linopy-solve-tc5219rl.sol
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>component  carrier         
+Link       electrolysis          145.0
+           fuel cell             135.2
 Generator  offwind               101.8
            onwind                111.9
            solar                 332.5
-Link       electrolysis          145.0
-           fuel cell             135.2
 Store      hydrogen storage    38417.0
 dtype: float64
 </pre></div>
@@ -2036,11 +2037,11 @@ dtype: float64
       </div>
     </a>
     <a class="right-next"
-       href="config-small-system.html"
+       href="pypsa-stochastic.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Annex Config</p>
+        <p class="prev-next-title">New features: Stochastic Optimization in PyPSA</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
