@@ -1089,16 +1089,16 @@ and/or output (i.e. <code class="docutils literal notranslate"><span class="pre"
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following loads have carriers which are not defined:
+Index([&#39;hydrogen demand&#39;], dtype=&#39;object&#39;, name=&#39;Load&#39;)
+</pre></div>
+</div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following buses have carriers which are not defined:
 Index([&#39;electricity&#39;, &#39;hydrogen&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following stores have carriers which are not defined:
 Index([&#39;hydrogen storage&#39;], dtype=&#39;object&#39;, name=&#39;Store&#39;)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following loads have carriers which are not defined:
-Index([&#39;hydrogen demand&#39;], dtype=&#39;object&#39;, name=&#39;Load&#39;)
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following links have carriers which are not defined:
@@ -1114,10 +1114,10 @@ Index([&#39;electrolysis&#39;, &#39;fuel cell&#39;], dtype=&#39;object&#39;, nam
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:   0%|          | 0/14 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  64%|██████▍   | 9/14 [00:00&lt;00:00, 86.93it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  64%|██████▍   | 9/14 [00:00&lt;00:00, 86.55it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 14/14 [00:00&lt;00:00, 67.20it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 14/14 [00:00&lt;00:00, 66.41it/s]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -1126,14 +1126,14 @@ Index([&#39;electrolysis&#39;, &#39;fuel cell&#39;], dtype=&#39;object&#39;, nam
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.:   0%|          | 0/7 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 7/7 [00:00&lt;00:00, 174.74it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 7/7 [00:00&lt;00:00, 174.28it/s]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 0.27s
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running HiGHS 1.10.0 (git hash: fd86653): Copyright (c) 2025 HiGHS under MIT licence terms
-LP   linopy-problem-1f2u4_c0 has 37237 rows; 17527 cols; 71227 nonzeros
+LP   linopy-problem-rcvnw16t has 37237 rows; 17527 cols; 71227 nonzeros
 Coefficient ranges:
   Matrix [1e-04, 4e+00]
   Cost   [4e-02, 2e+05]
@@ -1165,13 +1165,13 @@ Solver message: Optimal
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      18025     4.7521933007e+10 Pr: 0(0); Du: 0(3.95961e-13) 4s
 Solving the original LP from the solution after postsolve
-Model name          : linopy-problem-1f2u4_c0
+Model name          : linopy-problem-rcvnw16t
 Model status        : Optimal
 Simplex   iterations: 18025
 Objective value     :  4.7521933007e+10
 Relative P-D gap    :  1.1639490831e-13
-HiGHS run time      :          4.39
-Writing the solution to /tmp/linopy-solve-l7iizuy4.sol
+HiGHS run time      :          4.42
+Writing the solution to /tmp/linopy-solve-wnrlbvu0.sol
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)
@@ -1449,32 +1449,6 @@ dtype: float64
   </thead>
   <tbody>
     <tr>
-      <th>Store</th>
-      <th>hydrogen storage</th>
-      <th>hydrogen</th>
-      <td>205.90924</td>
-      <td>-2996.87303</td>
-      <td>-8552.16223</td>
-      <td>-13199.88177</td>
-      <td>-4842.20515</td>
-      <td>-12941.86838</td>
-      <td>-13199.88177</td>
-      <td>-13199.88177</td>
-      <td>-10335.18433</td>
-      <td>-13199.88177</td>
-      <td>...</td>
-      <td>709.23228</td>
-      <td>-13199.88177</td>
-      <td>1882.14524</td>
-      <td>-4262.12231</td>
-      <td>-10184.10457</td>
-      <td>-8469.76551</td>
-      <td>-1621.02543</td>
-      <td>-13199.88177</td>
-      <td>17362.72833</td>
-      <td>19500.00000</td>
-    </tr>
-    <tr>
       <th rowspan="2" valign="top">Load</th>
       <th>-</th>
       <th>AC</th>
@@ -1524,6 +1498,32 @@ dtype: float64
       <td>-19500.00000</td>
       <td>-19500.00000</td>
       <td>-19500.00000</td>
+    </tr>
+    <tr>
+      <th>Store</th>
+      <th>hydrogen storage</th>
+      <th>hydrogen</th>
+      <td>205.90924</td>
+      <td>-2996.87303</td>
+      <td>-8552.16223</td>
+      <td>-13199.88177</td>
+      <td>-4842.20515</td>
+      <td>-12941.86838</td>
+      <td>-13199.88177</td>
+      <td>-13199.88177</td>
+      <td>-10335.18433</td>
+      <td>-13199.88177</td>
+      <td>...</td>
+      <td>709.23228</td>
+      <td>-13199.88177</td>
+      <td>1882.14524</td>
+      <td>-4262.12231</td>
+      <td>-10184.10457</td>
+      <td>-8469.76551</td>
+      <td>-1621.02543</td>
+      <td>-13199.88177</td>
+      <td>17362.72833</td>
+      <td>19500.00000</td>
     </tr>
     <tr>
       <th rowspan="4" valign="top">Generator</th>
@@ -1814,16 +1814,16 @@ dtype: float64
 <span class="expanded">Hide code cell output</span>
 </summary>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following loads have carriers which are not defined:
+Index([&#39;hydrogen demand&#39;], dtype=&#39;object&#39;, name=&#39;Load&#39;)
+</pre></div>
+</div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following buses have carriers which are not defined:
 Index([&#39;electricity&#39;, &#39;hydrogen&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following stores have carriers which are not defined:
 Index([&#39;hydrogen storage&#39;], dtype=&#39;object&#39;, name=&#39;Store&#39;)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following loads have carriers which are not defined:
-Index([&#39;hydrogen demand&#39;], dtype=&#39;object&#39;, name=&#39;Load&#39;)
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following links have carriers which are not defined:
@@ -1839,10 +1839,10 @@ Index([&#39;electrolysis&#39;, &#39;fuel cell&#39;], dtype=&#39;object&#39;, nam
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:   0%|          | 0/15 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  60%|██████    | 9/15 [00:00&lt;00:00, 87.61it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  60%|██████    | 9/15 [00:00&lt;00:00, 86.70it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 15/15 [00:00&lt;00:00, 70.31it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 15/15 [00:00&lt;00:00, 69.44it/s]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -1851,14 +1851,14 @@ Index([&#39;electrolysis&#39;, &#39;fuel cell&#39;], dtype=&#39;object&#39;, nam
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.:   0%|          | 0/7 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 7/7 [00:00&lt;00:00, 177.40it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 7/7 [00:00&lt;00:00, 174.20it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 0.27s
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 0.28s
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running HiGHS 1.10.0 (git hash: fd86653): Copyright (c) 2025 HiGHS under MIT licence terms
-LP   linopy-problem-gwp5kxqo has 37238 rows; 17527 cols; 73417 nonzeros
+LP   linopy-problem-__3ozis4 has 37238 rows; 17527 cols; 73417 nonzeros
 Coefficient ranges:
   Matrix [1e-04, 4e+00]
   Cost   [4e-02, 2e+05]
@@ -1890,13 +1890,13 @@ Solver message: Optimal
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      11188     7.5338336224e+10 Pr: 0(0); Du: 0(1.20154e-13) 4s
 Solving the original LP from the solution after postsolve
-Model name          : linopy-problem-gwp5kxqo
+Model name          : linopy-problem-__3ozis4
 Model status        : Optimal
 Simplex   iterations: 11188
 Objective value     :  7.5338336224e+10
 Relative P-D gap    :  1.4380116123e-14
-HiGHS run time      :          3.83
-Writing the solution to /tmp/linopy-solve-7tv31nso.sol
+HiGHS run time      :          3.86
+Writing the solution to /tmp/linopy-solve-mzx17sv7.sol
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)

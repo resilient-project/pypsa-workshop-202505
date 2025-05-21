@@ -1,5 +1,5 @@
 # Welcome to the workshop!
-*12 May 2025, Berlin, Germany*
+*22-23 May 2025, TU Berlin, Germany*
 
 This repository contains PyPSA(-Eur) materials for a workshop organized for a broad audience of researchers and industry stakeholders interested in energy system modelling.
 The workshop is hosted by the ENSYS research group at TU Berlin — Fabian Neumann and Iegor Riepin — with support from the publicly funded RESILIENT project.
