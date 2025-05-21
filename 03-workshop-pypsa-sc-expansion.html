@@ -183,6 +183,7 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="slides.html">Slide deck PyPSA(-Eur)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="01-workshop-pypsa-intro.html">Introduction to <code class="docutils literal notranslate"><span class="pre">pypsa</span></code> and <code class="docutils literal notranslate"><span class="pre">linopy</span></code>: a simple dispatch problem</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02-workshop-pypsa-more-features.html">More <code class="docutils literal notranslate"><span class="pre">pypsa</span></code> features: more complex dispatch problems</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Advanced models in <code class="docutils literal notranslate"><span class="pre">pypsa</span></code>: capacity expansion planning with sector coupling</a></li>
@@ -1112,10 +1113,10 @@ Index([&#39;electrolysis&#39;, &#39;fuel cell&#39;], dtype=&#39;object&#39;, nam
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:   0%|          | 0/14 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  64%|██████▍   | 9/14 [00:00&lt;00:00, 85.76it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  64%|██████▍   | 9/14 [00:00&lt;00:00, 86.30it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 14/14 [00:00&lt;00:00, 66.43it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 14/14 [00:00&lt;00:00, 66.47it/s]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -1124,14 +1125,14 @@ Index([&#39;electrolysis&#39;, &#39;fuel cell&#39;], dtype=&#39;object&#39;, nam
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.:   0%|          | 0/7 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 7/7 [00:00&lt;00:00, 172.56it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 7/7 [00:00&lt;00:00, 174.48it/s]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 0.27s
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running HiGHS 1.10.0 (git hash: fd86653): Copyright (c) 2025 HiGHS under MIT licence terms
-LP   linopy-problem-0osruz2o has 37237 rows; 17527 cols; 71227 nonzeros
+LP   linopy-problem-7bo03mcj has 37237 rows; 17527 cols; 71227 nonzeros
 Coefficient ranges:
   Matrix [1e-04, 4e+00]
   Cost   [4e-02, 2e+05]
@@ -1163,13 +1164,13 @@ Solver message: Optimal
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      18025     4.7521933007e+10 Pr: 0(0); Du: 0(3.95961e-13) 4s
 Solving the original LP from the solution after postsolve
-Model name          : linopy-problem-0osruz2o
+Model name          : linopy-problem-7bo03mcj
 Model status        : Optimal
 Simplex   iterations: 18025
 Objective value     :  4.7521933007e+10
 Relative P-D gap    :  1.1639490831e-13
-HiGHS run time      :          4.40
-Writing the solution to /tmp/linopy-solve-1g68_g0l.sol
+HiGHS run time      :          4.43
+Writing the solution to /tmp/linopy-solve-f0pc68k2.sol
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)
@@ -1358,10 +1359,10 @@ Writing the solution to /tmp/linopy-solve-1g68_g0l.sol
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>component  carrier         
-Store      hydrogen storage    938.8
 Generator  OCGT                 69.5
            offwind              97.7
            solar               147.6
+Store      hydrogen storage    938.8
 Link       electrolysis         46.7
 dtype: float64
 </pre></div>
@@ -1498,32 +1499,6 @@ dtype: float64
       <td>-19500.00000</td>
     </tr>
     <tr>
-      <th>Store</th>
-      <th>hydrogen storage</th>
-      <th>hydrogen</th>
-      <td>205.90924</td>
-      <td>-2996.87303</td>
-      <td>-8552.16223</td>
-      <td>-13199.88177</td>
-      <td>-4842.20515</td>
-      <td>-12941.86838</td>
-      <td>-13199.88177</td>
-      <td>-13199.88177</td>
-      <td>-10335.18433</td>
-      <td>-13199.88177</td>
-      <td>...</td>
-      <td>709.23228</td>
-      <td>-13199.88177</td>
-      <td>1882.14524</td>
-      <td>-4262.12231</td>
-      <td>-10184.10457</td>
-      <td>-8469.76551</td>
-      <td>-1621.02543</td>
-      <td>-13199.88177</td>
-      <td>17362.72833</td>
-      <td>19500.00000</td>
-    </tr>
-    <tr>
       <th rowspan="4" valign="top">Generator</th>
       <th>OCGT</th>
       <th>AC</th>
@@ -1623,6 +1598,32 @@ dtype: float64
       <td>22271.62670</td>
       <td>NaN</td>
       <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Store</th>
+      <th>hydrogen storage</th>
+      <th>hydrogen</th>
+      <td>205.90924</td>
+      <td>-2996.87303</td>
+      <td>-8552.16223</td>
+      <td>-13199.88177</td>
+      <td>-4842.20515</td>
+      <td>-12941.86838</td>
+      <td>-13199.88177</td>
+      <td>-13199.88177</td>
+      <td>-10335.18433</td>
+      <td>-13199.88177</td>
+      <td>...</td>
+      <td>709.23228</td>
+      <td>-13199.88177</td>
+      <td>1882.14524</td>
+      <td>-4262.12231</td>
+      <td>-10184.10457</td>
+      <td>-8469.76551</td>
+      <td>-1621.02543</td>
+      <td>-13199.88177</td>
+      <td>17362.72833</td>
+      <td>19500.00000</td>
     </tr>
     <tr>
       <th rowspan="4" valign="top">Link</th>
@@ -1837,10 +1838,10 @@ Index([&#39;electrolysis&#39;, &#39;fuel cell&#39;], dtype=&#39;object&#39;, nam
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:   0%|          | 0/15 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  60%|██████    | 9/15 [00:00&lt;00:00, 86.83it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  60%|██████    | 9/15 [00:00&lt;00:00, 85.89it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 15/15 [00:00&lt;00:00, 69.48it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 15/15 [00:00&lt;00:00, 68.82it/s]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -1849,14 +1850,14 @@ Index([&#39;electrolysis&#39;, &#39;fuel cell&#39;], dtype=&#39;object&#39;, nam
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.:   0%|          | 0/7 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 7/7 [00:00&lt;00:00, 171.04it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 7/7 [00:00&lt;00:00, 176.08it/s]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 0.28s
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running HiGHS 1.10.0 (git hash: fd86653): Copyright (c) 2025 HiGHS under MIT licence terms
-LP   linopy-problem-fphqjnu5 has 37238 rows; 17527 cols; 73417 nonzeros
+LP   linopy-problem-20p56a9s has 37238 rows; 17527 cols; 73417 nonzeros
 Coefficient ranges:
   Matrix [1e-04, 4e+00]
   Cost   [4e-02, 2e+05]
@@ -1888,13 +1889,13 @@ Solver message: Optimal
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      11188     7.5338336224e+10 Pr: 0(0); Du: 0(1.20154e-13) 4s
 Solving the original LP from the solution after postsolve
-Model name          : linopy-problem-fphqjnu5
+Model name          : linopy-problem-20p56a9s
 Model status        : Optimal
 Simplex   iterations: 11188
 Objective value     :  7.5338336224e+10
 Relative P-D gap    :  1.4380116123e-14
-HiGHS run time      :          3.83
-Writing the solution to /tmp/linopy-solve-gj94yzer.sol
+HiGHS run time      :          3.86
+Writing the solution to /tmp/linopy-solve-zan05fld.sol
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)
@@ -1925,10 +1926,10 @@ Writing the solution to /tmp/linopy-solve-gj94yzer.sol
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>component  carrier         
-Store      hydrogen storage    38417.0
 Generator  offwind               101.8
            onwind                111.9
            solar                 332.5
+Store      hydrogen storage    38417.0
 Link       electrolysis          145.0
            fuel cell             135.2
 dtype: float64

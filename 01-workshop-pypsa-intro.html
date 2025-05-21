@@ -64,7 +64,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="More pypsa features: more complex dispatch problems" href="02-workshop-pypsa-more-features.html" />
-    <link rel="prev" title="Welcome to the workshop!" href="intro.html" />
+    <link rel="prev" title="Introduction to PyPSA-Eur Slides" href="slides.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -183,6 +183,7 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="slides.html">Slide deck PyPSA(-Eur)</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Introduction to <code class="docutils literal notranslate"><span class="pre">pypsa</span></code> and <code class="docutils literal notranslate"><span class="pre">linopy</span></code>: a simple dispatch problem</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02-workshop-pypsa-more-features.html">More <code class="docutils literal notranslate"><span class="pre">pypsa</span></code> features: more complex dispatch problems</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03-workshop-pypsa-sc-expansion.html">Advanced models in <code class="docutils literal notranslate"><span class="pre">pypsa</span></code>: capacity expansion planning with sector coupling</a></li>
@@ -906,13 +907,13 @@ Snapshots: 1
 <h2>Optimisation<a class="headerlink" href="#optimisation" title="Link to this heading">#</a></h2>
 <p>The design principle of PyPSA is that basically each component is associated with a set of variables and constraints that will be added to the optimisation model based on the input data stored for the components.</p>
 <p>For this dispatch problem, PyPSA will solve an optimisation problem that looks like this</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ace90e81-140a-4279-bcb6-60f2f294148b">
-<span class="eqno">(1)<a class="headerlink" href="#equation-ace90e81-140a-4279-bcb6-60f2f294148b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-6cb46953-39a2-4885-af2b-e5d7d063a44d">
+<span class="eqno">(1)<a class="headerlink" href="#equation-6cb46953-39a2-4885-af2b-e5d7d063a44d" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \min_{g_{s,t};} \sum_{t,s} o_{s} g_{s,t}
 \end{equation}\]</div>
 <p>such that</p>
-<div class="amsmath math notranslate nohighlight" id="equation-de806f27-23a5-45bb-a396-364d18268de5">
-<span class="eqno">(2)<a class="headerlink" href="#equation-de806f27-23a5-45bb-a396-364d18268de5" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-22978ee8-1b59-42f8-b720-cad8d1bebc3e">
+<span class="eqno">(2)<a class="headerlink" href="#equation-22978ee8-1b59-42f8-b720-cad8d1bebc3e" title="Permalink to this equation">#</a></span>\[\begin{align}
 0 &amp; \leq g_{s,t} \leq G_{s}  &amp; \text{generation limits : generator} \\
 D_t &amp;= \sum_s g_{s,t} &amp; \text{market clearing : bus} \\
 \end{align}\]</div>
@@ -958,7 +959,7 @@ Solver message: Optimal
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running HiGHS 1.10.0 (git hash: fd86653): Copyright (c) 2025 HiGHS under MIT licence terms
-LP   linopy-problem-ika0jbyg has 5 rows; 2 cols; 6 nonzeros
+LP   linopy-problem-7wv292zy has 5 rows; 2 cols; 6 nonzeros
 Coefficient ranges:
   Matrix [1e+00, 1e+00]
   Cost   [1e+01, 7e+01]
@@ -969,12 +970,12 @@ Presolving model
 0 rows, 0 cols, 0 nonzeros  0s
 Presolve : Reductions: rows 0(-5); columns 0(-2); elements 0(-6) - Reduced to empty
 Solving the original LP from the solution after postsolve
-Model name          : linopy-problem-ika0jbyg
+Model name          : linopy-problem-7wv292zy
 Model status        : Optimal
 Objective value     :  2.4000000000e+03
 Relative P-D gap    :  0.0000000000e+00
 HiGHS run time      :          0.00
-Writing the solution to /tmp/linopy-solve-c1mj5sqr.sol
+Writing the solution to /tmp/linopy-solve-yn1oz95l.sol
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)
@@ -1470,12 +1471,12 @@ Value: 2400.0
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="intro.html"
+       href="slides.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Welcome to the workshop!</p>
+        <p class="prev-next-title">Introduction to PyPSA-Eur Slides</p>
       </div>
     </a>
     <a class="right-next"
